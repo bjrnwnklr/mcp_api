@@ -36,7 +36,8 @@ def pretty_print_json(data):
     print(json.dumps(data, indent=4, ensure_ascii=False))
 
 endpoints = {("Dummy random quote", "https://dummyjson.com/quotes/random"),
-             ("JSON Placeholder User 1", "https://json-placeholder.mock.beeceptor.com/users/1")
+             ("JSON Placeholder User 1", "https://json-placeholder.mock.beeceptor.com/users/1"),
+            ("JSON Placeholder Typify User 1", "https://jsonplaceholder.typicode.com/users/1")
 }
 
 def main():
