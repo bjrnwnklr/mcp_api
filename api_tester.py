@@ -72,13 +72,13 @@ put_endpoints = [
         "JSON Placeholder successful login",
         "https://json-placeholder.mock.beeceptor.com/login",
         {"username": "bjoern", "password": "success-password"},
-        {}
+        {},
     ),
     (
         "Dummyjson auth",
         "https://dummyjson.com/auth/login",
         {"username": "emilys", "password": "emilyspass"},
-        {}
+        {},
     ),
     (
         "Dummyjson auth as json",
@@ -86,18 +86,18 @@ put_endpoints = [
         json.dumps({"username": "emilys", "password": "emilyspass"}),
         {
             "Content-Type": "application/json",
-        }
+        },
     ),
 ]
 
 
 def main():
     # GET requests
-    # logger.debug("GET requests")
-    # for description, endpoint in get_endpoints:
-    #     print(f"Endpoint: {description}, {endpoint}")
-    #     response_json = get_API_json(endpoint)
-    #     pretty_print_json(response_json)
+    logger.debug("GET requests")
+    for description, endpoint in get_endpoints:
+        print(f"Endpoint: {description}, {endpoint}")
+        response_json = get_API_json(endpoint)
+        pretty_print_json(response_json)
 
     # PUT requests
     logger.debug("POST requests")
@@ -105,23 +105,6 @@ def main():
         print(f"Endpoint: {description}, {endpoint}, {data}, {headers}")
         response_json = post_API(endpoint, data=data, headers=headers)
         pretty_print_json(response_json)
-
-
-    # dummy auth test
-    # auth_test_data = (
-    #     "Dummyjson auth",
-    #     "https://dummyjson.com/auth/login",
-    #     {"username": "emilys", "password": "emilyspass"},
-    #     {
-    #         "Content-Type": "application/json",
-    #     }
-    # )
-    # description, endpoint, data, headers = auth_test_data
-    # r = requests.post(url=endpoint, data=json.dumps(data), params=None, headers=headers)
-    # print(f"{r}")
-    # print(f"{r.text}")
-
-
 
 
 if __name__ == "__main__":
